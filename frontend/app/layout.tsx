@@ -5,18 +5,21 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Voice AI Agent",
-    description: "Real-time voice AI dashboard",
+    title: "Clinical Voice AI Agent",
+    description: "Real-time multilingual voice AI agent for clinical appointment booking",
+    keywords: ["healthcare", "AI", "voice agent", "appointment booking"],
 };
 
 export default function RootLayout({
     children,
-}: {
+}: Readonly<{
     children: React.ReactNode;
-}) {
+}>) {
     return (
-        <html lang="en">
-            <body className={inter.className}>{children}</body>
+        <html lang="en" suppressHydrationWarning>
+            <body className={inter.className} suppressHydrationWarning>
+                {children}
+            </body>
         </html>
     );
 }
